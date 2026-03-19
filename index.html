@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 첫번째 아이디어</title>
+    <!-- 폰트 적용: 프리텐다드 -->
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 파란색 텍스트에 어울리는 부드럽고 맑은 파스텔 톤 파란 배경 */
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            color: #1a202c;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 둥둥 떠다니는 장식용 배경 요소 - 파란색 테마 */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 1;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+
+        .circle-1 {
+            width: 450px;
+            height: 450px;
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            top: -100px;
+            left: -100px;
+        }
+
+        .circle-2 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -5s;
+        }
+
+        /* 글래스모피즘 컨테이너 */
+        .container {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 6rem 8rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px 0 rgba(31, 38, 135, 0.1);
+            text-align: center;
+            z-index: 2;
+            
+            /* 초기 애니메이션 상태 */
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        h1 {
+            /* 글자 크기 대폭 확대 (6.5rem) 및 짙고 생동감 있는 파란색 그라데이션 적용 */
+            font-size: 6.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            text-shadow: 0 8px 20px rgba(0, 82, 212, 0.15);
+            background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            white-space: nowrap;
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #4a5568;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.6s forwards;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(60px) scale(1.1); }
+        }
+
+        /* 반응형 대응 */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 4rem 2rem;
+                width: 90%;
+            }
+            h1 {
+                font-size: 3.5rem;
+                white-space: normal;
+                word-break: keep-all;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    
+    <div class="container">
+        <h1>내 첫번째 아이디어</h1>
+        <p>현대적이고 우아한 디자인으로 시작해보세요.</p>
+    </div>
+</body>
+</html>
