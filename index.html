@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 첫번째 아이디어</title>
+    <title>오늘도 힘내세요!</title>
     <!-- 폰트 적용: 프리텐다드 -->
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <style>
@@ -19,8 +20,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* 파란색 텍스트에 어울리는 부드럽고 맑은 파스텔 톤 파란 배경 */
-            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            /* 깨끗하고 밝은 화이트톤 배경 */
+            background: linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
             color: #1a202c;
             overflow: hidden;
             position: relative;
@@ -38,7 +39,8 @@
         .circle-1 {
             width: 450px;
             height: 450px;
-            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            /* 화이트톤에 어울리는 매우 부드러운 펄/실버 그레이톤 */
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
             top: -100px;
             left: -100px;
         }
@@ -46,7 +48,8 @@
         .circle-2 {
             width: 350px;
             height: 350px;
-            background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+            /* 약간의 온기가 있는 밝은 아이보리/라이트 그레이 */
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
             bottom: -50px;
             right: -50px;
             animation-delay: -5s;
@@ -63,7 +66,7 @@
             box-shadow: 0 10px 40px 0 rgba(31, 38, 135, 0.1);
             text-align: center;
             z-index: 2;
-            
+
             /* 초기 애니메이션 상태 */
             transform: translateY(30px);
             opacity: 0;
@@ -77,16 +80,16 @@
         }
 
         h1 {
-            /* 글자 크기 대폭 확대 (6.5rem) 및 짙고 생동감 있는 파란색 그라데이션 적용 */
-            font-size: 6.5rem;
+            /* 폰트 크기 40px 및 검정색(어두운 회색) 텍스트 적용 */
+            font-size: 40px;
             font-weight: 800;
-            letter-spacing: -0.03em;
-            text-shadow: 0 8px 20px rgba(0, 82, 212, 0.15);
-            background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.01em;
+            color: #1a1a1a;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            /* 텍스트가 묻히지 않도록 미세한 입체감 */
             margin-bottom: 1.5rem;
             white-space: nowrap;
+            transition: opacity 0.2s ease-in-out;
         }
 
         p {
@@ -104,6 +107,7 @@
                 opacity: 0;
                 transform: translateY(40px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -115,6 +119,7 @@
                 opacity: 0;
                 transform: translateY(10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -122,40 +127,191 @@
         }
 
         @keyframes float {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(60px) scale(1.1); }
+            0% {
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                transform: translateY(60px) scale(1.1);
+            }
+        }
+
+        /* 버튼 및 인터랙티브 스타일 추가 */
+        .btn {
+            margin-top: 2.5rem;
+            padding: 1rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            /* 위로 부드럽게 나타나는 애니메이션 (0.8초 딜레이) */
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+            outline: none;
+            z-index: 10;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        /* 버튼 동적 색상 테마들 (클릭 시 변경) */
+        .theme-blue {
+            background: linear-gradient(135deg, #0052D4 0%, #4364F7 100%);
+            box-shadow: 0 10px 20px rgba(67, 100, 247, 0.3);
+        }
+
+        .theme-blue:hover {
+            box-shadow: 0 15px 30px rgba(67, 100, 247, 0.5);
+            background: linear-gradient(135deg, #4364F7 0%, #0052D4 100%);
+        }
+
+        .theme-yellow {
+            background: linear-gradient(135deg, #FDC830 0%, #F37335 100%);
+            box-shadow: 0 10px 20px rgba(243, 115, 53, 0.3);
+        }
+
+        .theme-yellow:hover {
+            box-shadow: 0 15px 30px rgba(243, 115, 53, 0.5);
+            background: linear-gradient(135deg, #F37335 0%, #FDC830 100%);
+        }
+
+        .theme-orange {
+            background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+            box-shadow: 0 10px 20px rgba(255, 94, 98, 0.3);
+        }
+
+        .theme-orange:hover {
+            box-shadow: 0 15px 30px rgba(255, 94, 98, 0.5);
+            background: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
+        }
+
+        .theme-green {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            box-shadow: 0 10px 20px rgba(56, 239, 125, 0.3);
+        }
+
+        .theme-green:hover {
+            box-shadow: 0 15px 30px rgba(56, 239, 125, 0.5);
+            background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+        }
+
+        /* 클릭할 때 퍼져나가는 리플(Ripple) 애니메이션 요소 */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear forwards;
+            background-color: rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
 
         /* 반응형 대응 */
         @media (max-width: 1024px) {
             h1 {
-                font-size: 5rem;
+                font-size: 36px;
             }
         }
-        
+
         @media (max-width: 768px) {
             .container {
                 padding: 4rem 2rem;
                 width: 90%;
             }
+
             h1 {
-                font-size: 3.5rem;
+                font-size: 32px;
                 white-space: normal;
                 word-break: keep-all;
             }
+
             p {
                 font-size: 1.2rem;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="circle circle-1"></div>
     <div class="circle circle-2"></div>
-    
+
     <div class="container">
-        <h1>내 첫번째 아이디어</h1>
+        <h1>오늘도 힘내세요!</h1>
         <p>현대적이고 우아한 디자인으로 시작해보세요.</p>
+        <button class="btn theme-blue" id="actionBtn">다음 문장 보기</button>
     </div>
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const mainTitle = document.querySelector('h1');
+
+        // 4가지 응원 문구와 테마 정보 배열
+        const sentences = [
+            { text: '오늘도 힘내세요!', theme: 'theme-blue' },
+            { text: '오늘도 해냈어요!', theme: 'theme-yellow' },
+            { text: '조금씩 나아지고 있어요.', theme: 'theme-orange' },
+            { text: '이대로 가봅시다.', theme: 'theme-green' }
+        ];
+        let currentIndex = 0;
+
+        btn.addEventListener('click', function (e) {
+            // 버튼 요소의 위치를 가져와 마우스 클릭 좌표 계산
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const ripples = document.createElement('span');
+            ripples.style.left = x + 'px';
+            ripples.style.top = y + 'px';
+
+            // ripple 요소(원)의 크기를 버튼 크기에 맞춰 넉넉하게 설정
+            const diameter = Math.max(rect.width, rect.height);
+            ripples.style.width = diameter + 'px';
+            ripples.style.height = diameter + 'px';
+            ripples.style.marginLeft = -(diameter / 2) + 'px'; // 클릭 지점을 중심으로 정렬
+            ripples.style.marginTop = -(diameter / 2) + 'px';
+
+            ripples.classList.add('ripple');
+            this.appendChild(ripples);
+
+            // 0.6초 뒤 ripple 엘리먼트를 돔에서 제거
+            setTimeout(() => {
+                ripples.remove();
+            }, 600);
+
+            // 문장 및 테마 변경 로직: 차례대로 배열을 순환
+            const oldTheme = sentences[currentIndex].theme;
+            currentIndex = (currentIndex + 1) % sentences.length;
+            const newTheme = sentences[currentIndex].theme;
+
+            // 기존 테마 클래스 제거 후 새 테마 클래스 추가
+            btn.classList.remove(oldTheme);
+            btn.classList.add(newTheme);
+
+            // 부드러운 페이드 효과 적용 (h1 요소의 transition 활용)
+            mainTitle.style.opacity = 0;
+            setTimeout(() => {
+                mainTitle.textContent = sentences[currentIndex].text;
+                mainTitle.style.opacity = 1;
+            }, 200);
+        });
+    </script>
 </body>
+
 </html>
